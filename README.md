@@ -1,4 +1,4 @@
 # Google-Login
 
-Dependencies: (mechanize)
-  sudo apt-get install python-mechanize
+Dependencies: (mechanize)<br />
+sudo apt-get install python-mechanize
