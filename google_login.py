@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #  -*- coding: utf-8 -*-
-import mechanize, sys, getopt
+import mechanize, sys
 
 def doLoginGoogle(user,passw):
 	print "\033[92m[Creating Google Session]\033[0m"
@@ -29,14 +29,13 @@ def doLoginGoogle(user,passw):
 	if login.geturl().find("myaccount.google.com")>0:
 		print "\033[92m[Logged in Google]\033[0m"
 		print "\033[92m[Entering Analytics]\033[0m"
-		br.open("https://accounts.google.com/ServiceLogin?service=analytics&passive=true&nui=1&hl=pt-BR&continue=https%3A%2F%2Fwww.google.com%2Fanalytics%2Fweb%2F%3Fhl%3Dpt-BR&followup=https%3A%2F%2Fwww.google.com%2Fanalytics%2Fweb%2F%3Fhl%3Dpt-BR")
-		print br.geturl()
+		br.open("https://drive.google.com")
+		analytics	= br.response().read()
+		print analytics
 	else:
 		print "\033[91m[The email and password you entered don't match]\033[0m"
 
 if len(sys.argv)>2:
-	doLoginGoogle(sys.argv[1:][0], sys.argv[1:][1])
+	doLoginGoogle(sys.argv[1], sys.argv[2])
 else:
-	print '\033[91mUsage:\n\tgoogle_login.py <login> <pass>\033[0m'
-	
-exit(2)
+	print "Usage: "+sys.argv[0]+" <login> <pass>"
