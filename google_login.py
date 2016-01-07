@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #  -*- coding: utf-8 -*-
-import mechanize, sys
+import mechanize, urllib, sys
 
 def doLoginGoogle(user,passw):
 	print "\033[92m[Creating Google Session]\033[0m"
@@ -19,7 +19,6 @@ def doLoginGoogle(user,passw):
 	br.form.new_control('text','Email',{'value':user})
 	br.form.fixup()
 	res				= br.submit()
-	print "\033[92m[Email Selected]\033[0m"
 	sessionn		= br.response().read()
 	br.select_form(nr=0)
 	br.form.set_all_readonly(False)
@@ -28,8 +27,13 @@ def doLoginGoogle(user,passw):
 	login			= br.submit()
 	if login.geturl().find("myaccount.google.com")>0:
 		print "\033[92m[Logged in Google]\033[0m"
-		print "\033[92m[Entering Google Services]\033[0m"
-		br.open("https://www.googleapis.com/auth/drive")
+		
+		br.open("https://www.googleapis.com/auth/yt-analytics.readonly")
+		
+		#https://www.googleapis.com/auth/yt-analytics.readonly
+		#https://www.googleapis.com/auth/drive
+		#https://www.googleapis.com/auth/analytics.readonly
+		
 		#br.open("https://www.googleapis.com/drive/v2/files/0B6b4BiW-o9hxTV80Ym9sMERXZkE?alt=media")
 		services	= br.response().read()
 		print services
