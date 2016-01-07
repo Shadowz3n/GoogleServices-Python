@@ -28,13 +28,11 @@ def doLoginGoogle(user,passw):
 	if login.geturl().find("myaccount.google.com")>0:
 		print "\033[92m[Logged in Google]\033[0m"
 		
-		br.open("https://www.googleapis.com/auth/yt-analytics.readonly")
+		# List files with paste ID
+		#br.open("https://drive.google.com/act", urllib.urlencode({docId:'',authuser:0,minResultCount:20,recursive:true,token:}))
 		
-		#https://www.googleapis.com/auth/yt-analytics.readonly
-		#https://www.googleapis.com/auth/drive
-		#https://www.googleapis.com/auth/analytics.readonly
-		
-		#br.open("https://www.googleapis.com/drive/v2/files/0B6b4BiW-o9hxTV80Ym9sMERXZkE?alt=media")
+		# Download file ID
+		br.open("https://drive.google.com/uc?id=0B6b4BiW-o9hxNk1veEJVa1FrU1E&authuser=0&export=download")
 		services	= br.response().read()
 		print services
 	else:
