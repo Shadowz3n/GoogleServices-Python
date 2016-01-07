@@ -31,8 +31,11 @@ def doLoginGoogle(user,passw):
 		# List files with paste ID
 		#br.open("https://drive.google.com/act", urllib.urlencode({docId:'',authuser:0,minResultCount:20,recursive:true,token:}))
 		
+		# Upload file
+		br.open("https://drive.google.com/upload/resumableuploadsc?authuser=0", '{"protocolVersion":"0.8","createSessionRequest":{"fields":[{"external":{"name":"file","filename":"Seguro Fian\u00e7a - Ficha Pessoa Fisica - RESIDENCIAL.pdf","put":{},"size":188113}},{"inlined":{"name":"parentId","content":"0B6b4BiW-o9hxRlBnRVFlZzgwRVE","contentType":"text/plain"}},{"inlined":{"name":"driveSourceClientService","content":"UploadWeb","contentType":"text/plain"}},{"inlined":{"name":"modifiedTime","content":"1452096907160","contentType":"text/plain"}}]}}')
+		
 		# Download file ID
-		br.open("https://drive.google.com/uc?id=0B6b4BiW-o9hxNk1veEJVa1FrU1E&authuser=0&export=download")
+		#br.open("https://drive.google.com/uc?id=0B6b4BiW-o9hxNk1veEJVa1FrU1E&authuser=0&export=download")
 		services	= br.response().read()
 		print services
 	else:
