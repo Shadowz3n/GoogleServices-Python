@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #  -*- coding: utf-8 -*-
-import mechanize, sys, json, re
+import mechanize, sys
 
 def doLoginGoogle(user,passw):
 	print "\033[92m[Creating Google Session]\033[0m"
@@ -32,7 +32,7 @@ def doLoginGoogle(user,passw):
 		# My paste: u/2/folders/0B2qbDxOlHLfPeThCYUFNQlQ0Wk0 or my-drive
 		br.open("https://drive.google.com/drive/u/2/folders/0B2qbDxOlHLfPeThCYUFNQlQ0Wk0")
 		token		= br.response().read().split(',[["xsrf","')[1].split('",["')[0]
-		itens		= br.response().read().split("window['_DRIVE_ivd'] = '")[1].replace('\\x22', '"').replace('\\n', '').replace('\\\\', '').split(";")[0][:-1]
+		itens		= br.response().read().split("window['_DRIVE_ivd'] = '")[1].replace('\\x22', '"').replace('\\n', '').replace('\\\\', '').split(";")[0].replace('\/', '/')[:-1]
 		
 		#br.open("https://drive.google.com/act", '{docId:"0B2qbDxOlHLfPdEplb1k3WnYyUTA",authuser:0,minResultCount:20,recursive:true,token:'+token+'}')
 		print itens
