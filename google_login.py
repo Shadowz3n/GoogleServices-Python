@@ -28,10 +28,11 @@ def doLoginGoogle(user,passw):
 	login			= br.submit()
 	if login.geturl().find("myaccount.google.com")>0:
 		print "\033[92m[Logged in Google]\033[0m"
-		print "\033[92m[Entering Analytics]\033[0m"
-		br.open("https://drive.google.com")
-		analytics	= br.response().read()
-		print analytics
+		print "\033[92m[Entering Google Services]\033[0m"
+		br.open("https://www.googleapis.com/auth/drive")
+		#br.open("https://www.googleapis.com/drive/v2/files/0B6b4BiW-o9hxTV80Ym9sMERXZkE?alt=media")
+		services	= br.response().read()
+		print services
 	else:
 		print "\033[91m[The email and password you entered don't match]\033[0m"
 
