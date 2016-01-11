@@ -1,8 +1,8 @@
 #!/usr/bin/python
 #  -*- coding: utf-8 -*-
-# Google Services (IMPS)
+# Google Services PY (IMPS)
 # @autor: Henrique Bissoli Silva (emp.shad@gmail.com)
-# Updates: https://github.com/Shadowz3n/Google-Services
+# Updates: https://github.com/Shadowz3n/Google-Services-PY
 import mechanize, sys, json
 
 if len(sys.argv)>2:
