@@ -2,7 +2,7 @@
 #  -*- coding: utf-8 -*-
 # Google Services Python (IMPS)
 # @autor: Henrique Bissoli Silva (emp.shad@gmail.com)
-# Updates: https://github.com/Shadowz3n/Google-Services-Python
+# Updates: https://github.com/Shadowz3n/GoogleServices-Python
 import mechanize, sys, json
 
 if len(sys.argv)>2:
