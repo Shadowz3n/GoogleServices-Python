@@ -1,4 +1,4 @@
-# Google Services Python (IMPS)
+# GoogleServices Python (IMPS)
 
 Dependencies: (mechanize)<br />
 sudo apt-get install python-mechanize
